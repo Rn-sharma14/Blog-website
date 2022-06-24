@@ -1,0 +1,62 @@
+<%-include('../partition/Header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/Blog" >Blogs</a></li>
+                            <li><a href="/admin/category">Categories</a></li>
+                            <li><a href="/admin/about">About</a></li>
+                            <li><a href="/admin/contact">Contact</a></li>
+                            <li><a href="/create_image" class="active">Create Image</a></li>
+
+
+                            
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                          <div class="dash-title">
+                              <h1>Create image</h1>
+                          </div>
+                        </div>
+                        <div class="blog-form">
+                          <form action="/image_insert" method="post" enctype="multipart/form-data">
+                            
+                            <div class="form-group form-row">
+                              <label class="col-md-3">Title <span class="required">*</span></label>
+                              <div class="col-md-9">
+                                <textarea name="title" rows="5" class="form-control" placeholder="Title" required></textarea>
+                              </div>
+                          </div>
+                          
+                            
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Image <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                  <input type="file" name="image" id=""> 
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                  <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%-include('../partition/Footer.ejs') %>
