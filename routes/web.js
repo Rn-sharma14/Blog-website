@@ -9,6 +9,7 @@ const FrontController = require('../controllers/FrontController')
 const ImageController = require('../controllers/ImageController')
 const UnderConstructor = require('../middleware/UnderConstructor')
 const upload = require('../middleware/ImageMiddleware')
+const UserController = require('../controllers/admin/UserController')
 
 
 const router = express.Router()
@@ -78,6 +79,11 @@ router.get('/delete_image/:id',ImageController.delete_image);
 
 
 
+
+
+// UserController
+router.get('/signup',UserController.signup);
+router.post('/signup_insert',UserController.signup_insert);
 
 
 

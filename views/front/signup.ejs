@@ -1,23 +1,30 @@
-<%-include('./partition/Header.ejs') %>
+<%-include('../partition/Header.ejs') %>
 
 <section class="login-wrap mtb-40">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="login-box">
-                    <h1>Administrator Login</h1>
-                    <form action="">
+                    <h1>Administrator SignUp</h1>
+                    <form action="/signup_insert" method="post" >
                         <div class="form-group">
                             <input type="text" name="username" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary">Log In</button>
+                            <input type="password" name="cnpassword" class="form-control" placeholder="Confirm-Password" required>
+                        </div>
+                       
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
                         </div>
                         <div class="form-group">
-                            <a href="/signup" class="btn btn-primary">Sign Up</a>
+                            <a href="/login" class="btn btn-primary">Log In</a>
                         </div>
                     </form>
                 </div>         
@@ -26,4 +33,4 @@
     </div>
 </section>
 
-<%-include('./partition/Footer.ejs') %>
+<%-include('../partition/Footer.ejs') %>
