@@ -82,6 +82,33 @@ class BlogController{
 
 
 
+// To view and delete category
+
+    static view_all = async(req,res)=>{
+        try{
+            const result = await CategoryModel.find()
+            // console.log(result)
+            res.render('admin/blog/view_all_cat.ejs',{view:result})
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
+
+    static delete_cat = async(req,res)=>{
+        try{
+            const result = await CategoryModel.findByIdAndDelete(req.params.id)
+            res.redirect('/admin/view_all')
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
+
+
 
 
 

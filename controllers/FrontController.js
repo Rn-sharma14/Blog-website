@@ -46,7 +46,8 @@ class FrontController{
 
 
     static blog = async(req,res)=>{
-        res.render('blog')
+        const result = await BlogModel.find()
+        res.render('blog',{data:result})
     }
     static login = async(req,res)=>{
         res.render('login')
@@ -67,6 +68,25 @@ class FrontController{
         catch(err){
             console.log(err)
         }
+    }
+
+    static detailbycat = async(req,res)=>{
+
+        try{
+            // console.log(req.params.catname)
+            const catname = req.params.catname
+            // console.log(catname)
+            const result = await BlogModel.find({category_name:catname})
+            // console.log(result)
+            res.render('front/detailbycat' ,{cat:result},{catname:catname})
+
+        }
+        catch(err){
+            console.log(err)
+        }
+
+
+
     }
 
 

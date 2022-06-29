@@ -24,7 +24,8 @@ router.get('/about',FrontController.about)
 router.get('/contact',FrontController.contact)
 router.get('/bloglist',FrontController.blog)
 router.get('/login',FrontController.login)
-router.get('/detail/:id',FrontController.detail)
+router.get('/detail/:id',FrontController.detail);
+router.get('/detailbycat/:catname',FrontController.detailbycat)
 
 router.post('/contact_insert',FrontController.contact_insert);
 
@@ -53,6 +54,9 @@ router.post('/admin/blog_insert',upload,BlogController.blog_insert);
 router.get('/admin/delete/:id',BlogController.delete);
 router.get('/admin/edit/:id',BlogController.edit)
 router.post('/admin/update/:id',BlogController.update);
+
+router.get('/admin/view_all',BlogController.view_all);
+router.get('/admin/delete_cat/:id',BlogController.delete_cat);
 
 // router.get('/admin',BlogController.display);
 
