@@ -1,21 +1,21 @@
 const CategoryModel = require('../../models/category')
 
-class CategoryController{
+class CategoryController {
 
-    static allcategory = async(req,res)=>{
+    static allcategory = async (req, res) => {
         res.render('admin/category/all_category')
     }
 
-    static catergory_insert = async(req,res)=>{
+    static catergory_insert = async (req, res) => {
         //console.log(req.body)
-        try{
+        try {
             const result = new CategoryModel({
-                category_name : req.body.category_name
+                category_name: req.body.category_name
             })
             await result.save()
             res.redirect('/admin/category')
         }
-        catch(err) {
+        catch (err) {
             console.log(err)
         }
 

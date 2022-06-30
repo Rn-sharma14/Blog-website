@@ -1,67 +1,74 @@
 <%-include('../../partition/Header.ejs') %>
 
-<section class="dashboard-wrap mtb-40">
-    <div class="container">
-        <div class="body-content">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="dash-left">
-                        <ul>
-                            <li class="active"><a href="/admin/dashboard" >Dashboard</a></li>
-                            <li><a href="/admin/Blog">Blogs</a></li>
-                            <li><a href="/admin/category"  class="active">Categories</a></li>
-                            <li><a href="/admin/about">About</a></li>
-                            <li><a href="/admin/contact">Contact</a></li>
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul>
+                                <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                                <li><a href="/admin/Blog">Blogs</a></li>
+                                <li><a href="/admin/category" class="active">Categories</a></li>
+                                <li><a href="/admin/about">About</a></li>
+                                <li><a href="/admin/contact">Contact</a></li>
 
 
-                            
-                            <li><a href="/logout">Logout</a></li>
-                        </ul>
-                    </div>   
-                </div>
-                
-                <div class="col-md-9">
-                    <div class="dash-right">
-                        <div class="dash-header">
-                            <div class="dash-title">
-                                <h1>All Categories</h1>
-                            </div>
-                            
+
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
                         </div>
-                        <table class="table table-bordered table-striped">
-                            <tr>
-                                <th>#ID</th>
-                                
-                                <th>Category Name</th>
-                                <th>Posted On</th>
-                                <th>Action</th>
-                            </tr>
-                            <% var i=1 %>
-                            <% view.forEach((data)=>{%>
-                            <tr>
-                               
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>All Categories</h1>
+                                </div>
+
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>#ID</th>
+
+                                    <th>Category Name</th>
+                                    <th>Posted On</th>
+                                    <th>Action</th>
+                                </tr>
+                                <% var i=1 %>
+                                    <% view.forEach((data)=>{%>
+                                        <tr>
 
 
-                                <td><%= i++ %></td>
-                                
-                                <td><%=data.category_name%></td>
-                                <td><%=data.createdAt.toLocaleDateString()  %></td>
-                                
 
-                                <td>
-                                    <a href="/admin/delete_cat/<%=data._id%>" class="btn btn-danger btn-sm">Delete</a>
-                                    
-                                </td>
-                            </tr>
-                            <%}) %>
-                        </table>
-                    </div>   
+                                            <td>
+                                                <%= i++ %>
+                                            </td>
+
+                                            <td>
+                                                <%=data.category_name%>
+                                            </td>
+                                            <td>
+                                                <%=data.createdAt.toLocaleDateString() %>
+                                            </td>
+
+
+                                            <td>
+                                                <a href="/admin/delete_cat/<%=data._id%>"
+                                                    class="btn btn-danger btn-sm">Delete</a>
+
+                                            </td>
+                                        </tr>
+                                        <%}) %>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<%-include('../../partition/Footer.ejs') %>
+    <%-include('../../partition/Footer.ejs') %>

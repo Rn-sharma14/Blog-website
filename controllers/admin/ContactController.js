@@ -1,21 +1,21 @@
 const ContactModel = require('../../models/Contact')
 
-class ContactController{
+class ContactController {
 
-    static contact = async(req,res)=>{
-        try{
+    static contact = async (req, res) => {
+        try {
             const result = await ContactModel.find()
 
-        res.render('admin/contact/contact',{contact:result})
+            res.render('admin/contact/contact', { contact: result })
 
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
 
     }
 
-    
+
 
 
 

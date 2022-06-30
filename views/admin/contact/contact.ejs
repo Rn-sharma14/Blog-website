@@ -1,72 +1,82 @@
 <%-include('../../partition/Header.ejs') %>
 
-<section class="dashboard-wrap mtb-40">
-    <div class="container">
-        <div class="body-content">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="dash-left">
-                        <ul>
-                            <li class="active"><a href="/admin/dashboard" >Dashboard</a></li>
-                            <li><a href="/admin/Blog">Blogs</a></li>
-                            <li><a href="/admin/category">Categories</a></li>
-                            <li><a href="/admin/about">About</a></li>
-                            <li><a href="/admin/contact" class="active">Contact</a></li>
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul>
+                                <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                                <li><a href="/admin/Blog">Blogs</a></li>
+                                <li><a href="/admin/category">Categories</a></li>
+                                <li><a href="/admin/about">About</a></li>
+                                <li><a href="/admin/contact" class="active">Contact</a></li>
 
 
-                            
-                            <li><a href="/logout">Logout</a></li>
-                        </ul>
-                    </div>   
-                </div>
-                
-                <div class="col-md-9">
-                    <div class="dash-right">
-                        <div class="dash-header">
-                            <div class="dash-title">
-                                <h1>Contacts</h1>
-                            </div>
-                            
+
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
                         </div>
-                        <table class="table table-bordered table-striped">
-                            <tr>
-                                <th>#ID</th>
-                                
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Message</th>
+                    </div>
 
-                                
-                                <th>Action</th>
-                            </tr>
-                            <% var i=1 %>
-                            <% contact.forEach((data)=>{%>
-                            <tr>
-                               
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>Contacts</h1>
+                                </div>
+
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>#ID</th>
+
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
 
 
-                                <td><%= i++ %></td>
-                                
-                                <td><%=data.name%></td>
-                                <td><%=data.email  %></td>
-                                <td><%=data.phone %></td>
-                                <td><%=data.message %></td>
+                                    <th>Action</th>
+                                </tr>
+                                <% var i=1 %>
+                                    <% contact.forEach((data)=>{%>
+                                        <tr>
 
-                                <td>
-                                    <a href="" class="btn btn-info btn-sm">View</a>
-                                    
-                                </td>
-                            </tr>
-                            <%}) %>
-                        </table>
-                    </div>   
+
+
+                                            <td>
+                                                <%= i++ %>
+                                            </td>
+
+                                            <td>
+                                                <%=data.name%>
+                                            </td>
+                                            <td>
+                                                <%=data.email %>
+                                            </td>
+                                            <td>
+                                                <%=data.phone %>
+                                            </td>
+                                            <td>
+                                                <%=data.message %>
+                                            </td>
+
+                                            <td>
+                                                <a href="" class="btn btn-info btn-sm">View</a>
+
+                                            </td>
+                                        </tr>
+                                        <%}) %>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<%-include('../../partition/Footer.ejs') %>
+    <%-include('../../partition/Footer.ejs') %>
