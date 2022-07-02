@@ -50,7 +50,7 @@ class FrontController {
         res.render('blog', { data: result })
     }
     static login = async (req, res) => {
-        res.render('login')
+        res.render('login',{ message: req.flash("error") })
     }
 
     static detail = async (req, res) => {

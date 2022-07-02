@@ -88,6 +88,7 @@ router.get('/delete_image/:id', ImageController.delete_image);
 // UserController
 router.get('/signup', UserController.signup);
 router.post('/signup_insert', UserController.signup_insert);
+router.post('/verify_login',UserController.verify_login)
 
 
 

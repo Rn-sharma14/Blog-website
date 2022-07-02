@@ -6,9 +6,14 @@
             <div class="col-md-6">
                 <div class="login-box">
                     <h1>Administrator Login</h1>
-                    <form action="">
+                    <%if(message.length> 0){ %>
+                        <div class="alert alert-danger">
+                            <%=message %>
+                        </div>
+                        <% }%>
+                    <form action="verify_login" method="post">
                         <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="Username">
+                            <input type="text" name="email" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" class="form-control" placeholder="Password">
